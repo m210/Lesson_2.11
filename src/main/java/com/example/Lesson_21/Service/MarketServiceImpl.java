@@ -8,17 +8,11 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
-@Scope(scopeName = "prototype")
 public class MarketServiceImpl implements MarketService {
 
 	private final Basket basket;
-	public MarketServiceImpl() {
-		this.basket = new Basket();
-	}
-
-	@PostConstruct
-	public void setup() {
-		System.out.println("MarketServiceImpl is created");
+	public MarketServiceImpl(Basket basket) {
+		this.basket = basket;
 	}
 
 	@Override

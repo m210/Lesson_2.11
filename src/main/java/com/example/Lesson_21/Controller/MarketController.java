@@ -1,8 +1,11 @@
 package com.example.Lesson_21.Controller;
 
+import com.example.Lesson_21.Basket;
 import com.example.Lesson_21.Service.MarketService;
 import com.example.Lesson_21.Service.MarketServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
