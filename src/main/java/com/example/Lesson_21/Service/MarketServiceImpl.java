@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 public class MarketServiceImpl implements MarketService {
@@ -21,7 +23,7 @@ public class MarketServiceImpl implements MarketService {
 	}
 
 	@Override
-	public List<Integer> get() {
+	public Set<Map.Entry<Integer, Integer>> get() {
 		return basket.get();
 	}
 

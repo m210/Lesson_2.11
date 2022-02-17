@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @RestController
-@RequestMapping("/store/order")
+@RequestMapping("/order")
 public class MarketController {
 
     private final MarketService service;
@@ -35,7 +37,7 @@ public class MarketController {
     }
 
     @GetMapping("/get")
-    public List<Integer> get() {
+    public Set<Map.Entry<Integer, Integer>> get() {
         return service.get();
     }
 }

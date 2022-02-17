@@ -1,19 +1,20 @@
 package com.example.Lesson_21;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Basket {
 
-	private final List<Integer> items = new ArrayList<>();
+	private final Map<Integer, Integer> items = new HashMap<>();
 
 	public void add(List<Integer> ids) {
-		items.addAll(ids);
+		for(int i : ids) {
+			int count = items.getOrDefault(i, 0);
+			items.put(i, ++count);
+		}
 	}
 
-	public List<Integer> get() {
-		return Collections.unmodifiableList(items);
+	public Set<Map.Entry<Integer, Integer>> get() {
+		return Collections.unmodifiableSet(items.entrySet());
 	}
 	
 }
